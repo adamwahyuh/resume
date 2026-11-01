@@ -1,6 +1,9 @@
 // Sumber: resume Canva "Adam Wahyu Hariyadi ATS"
 // Teks yang beda per bahasa ditulis { id, en }; sisanya dipakai kedua bahasa.
 
+// path gambar di public/ harus ikut base URL (/resume/ di GitHub Pages)
+export const asset = (path) => import.meta.env.BASE_URL + path
+
 export const ui = {
   sections: [
     ['top', { id: 'Intro', en: 'Intro' }],
@@ -247,7 +250,7 @@ export const research = [
   {
     title: 'Penelitian Model & Prototype SIM-PPM',
     role: { id: 'Universitas Utpadaka Swastika', en: 'Universitas Utpadaka Swastika' },
-    image: { src: '/images/penelitian/lppm.webp', width: 1600, height: 1041 },
+    image: { src: asset('images/penelitian/lppm.webp'), width: 1600, height: 1041 },
     alt: {
       id: 'Tangkapan layar rapat daring FGD Pengelolaan Penelitian, Adam di tengah baris atas',
       en: 'Screenshot of the online research management focus group, Adam in the top-middle tile',
@@ -256,7 +259,7 @@ export const research = [
   {
     title: 'Pengembangan dan Implementasi Jaringan Internet Intra Kementerian JIK untuk Mendukung Transformasi Digital di Lingkungan Kemendikdasmen',
     role: { id: 'Anggota tim peneliti, Universitas Utpadaka Swastika', en: 'Research team member, Universitas Utpadaka Swastika' },
-    image: { src: '/images/penelitian/jaringan.webp', width: 640, height: 1139 },
+    image: { src: asset('images/penelitian/jaringan.webp'), width: 640, height: 1139 },
     alt: {
       id: 'Banner penelitian UTPAS yang mencantumkan judul penelitian dan Adam Wahyu Hariyadi sebagai anggota',
       en: 'UTPAS research banner listing the project title and Adam Wahyu Hariyadi as a team member',
@@ -271,7 +274,7 @@ export const training = [
     title: 'Creative Training, BFI Finance Fair 2024',
     place: 'PT BFI Finance Indonesia Tbk',
     period: { id: 'Okt 2024', en: 'Oct 2024' },
-    image: { src: '/images/certs/bfi.webp', thumb: '/images/certs/bfi-thumb.webp', width: 720, height: 505 }, // thumb 720px, klik = versi penuh
+    image: { src: asset('images/certs/bfi.webp'), thumb: asset('images/certs/bfi-thumb.webp'), width: 720, height: 505 }, // thumb 720px, klik = versi penuh
   },
   { title: { id: 'Pelatihan Teller', en: 'Teller training' }, place: 'PT Bank Central Asia Tbk (BCA)', period: 'Jul 2026' },
   {

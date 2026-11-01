@@ -1,4 +1,4 @@
-import { ui, profile } from '../data.js'
+import { ui, profile, asset } from '../data.js'
 import './Hero.css'
 
 export default function Hero({ t }) {
@@ -9,7 +9,7 @@ export default function Hero({ t }) {
           <span className="hero__line hero__line--back">{profile.name[0]}</span>
           <img
             className="hero__photo"
-            src="/images/foto-body.webp"
+            src={asset('images/foto-body.webp')}
             alt={t(ui.photoAlt)}
             width="636"
             height="954"
