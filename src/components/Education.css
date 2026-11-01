@@ -1,0 +1,14 @@
+.school {
+  padding: 8vh var(--gutter) 16vh;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem;
+}
+.school__item { padding: 1.25rem 0; border-top: 1px solid var(--line); }
+.school__item h3 { font-size: 1.35rem; font-weight: 800; font-variation-settings: 'wdth' 85; }
+.school__period { color: var(--muted); font-size: 0.95rem; }
+.school__thumb { display: block; margin-bottom: 1rem; max-width: 22rem; border: 1px solid var(--line); }
+.school__thumb img { display: block; width: 100%; height: auto; }
+.school__thumb:hover { border-color: var(--ink); }
+
+@media (max-width: 899px) {
+  .school { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+}

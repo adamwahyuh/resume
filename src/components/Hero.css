@@ -1,0 +1,60 @@
+/* HERO: di-pin, --p 0..1 dari useScrollScenes, --mx/--my dari posisi mouse */
+.hero { height: 230vh; position: relative; }
+.hero__stage {
+  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
+  display: grid; place-items: center;
+  background: var(--paper); /* sticky = stacking context; blend butuh backdrop di sini */
+}
+.hero__name {
+  position: relative; width: 100%; height: 100%;
+  display: grid; place-items: center;
+  text-transform: uppercase; font-weight: 900; line-height: 0.82; letter-spacing: -0.01em;
+}
+.hero__line {
+  position: absolute; left: 0; right: 0; text-align: center; white-space: nowrap;
+  font-size: clamp(3.4rem, 12.5vw, 14rem);
+  font-variation-settings: 'wdth' calc(100 - var(--p, 0) * 38);
+  will-change: transform;
+}
+/* tiap layer bergeser beda jarak terhadap mouse = kedalaman */
+.hero__line--back {
+  top: 22%; z-index: 0;
+  transform: translate(calc(var(--p, 0) * -14vw + var(--mx, 0) * 18px), calc(var(--my, 0) * 10px));
+}
+/* blend difference: terbaca di atas kertas maupun kemeja hitam */
+.hero__line--front {
+  top: 50%; z-index: 2; color: #fff; mix-blend-mode: difference;
+  transform: translate(calc(var(--p, 0) * 14vw + var(--mx, 0) * -28px), calc(var(--my, 0) * -14px));
+}
+.hero__photo {
+  position: absolute; bottom: 0; left: 50%; z-index: 1;
+  height: 86%; width: auto; max-width: none;
+  transform-origin: 50% 100%;
+  transform: translate(calc(-50% + var(--mx, 0) * 8px), calc(var(--my, 0) * 4px)) scale(calc(1 - var(--p, 0) * 0.12));
+  will-change: transform;
+}
+.hero__meta {
+  position: absolute; left: var(--gutter); bottom: calc(var(--bar) + 24px); z-index: 3;
+  display: grid; gap: 0.15rem; font-size: 0.95rem; max-width: 18rem;
+  background: var(--paper); padding: 0.75rem 1rem 0.75rem 0;
+}
+.hero__role { font-size: 1.5rem; font-weight: 800; font-variation-settings: 'wdth' 80; }
+.hero__hint {
+  position: absolute; right: var(--gutter); bottom: calc(var(--bar) + 32px); z-index: 3;
+  font-size: 0.9rem; color: var(--muted);
+  opacity: calc(1 - var(--p, 0) * 5);
+}
+
+@media (max-width: 599px) {
+  .hero { height: 200vh; }
+  .hero__line { white-space: normal; font-size: 17vw; line-height: 0.85; }
+  .hero__line--back { top: 12%; }
+  .hero__line--front { top: 58%; }
+  .hero__photo { height: 74%; }
+  .hero__meta { max-width: calc(100% - 2 * var(--gutter)); font-size: 0.9rem; }
+  .hero__role { font-size: 1.25rem; }
+  .hero__hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero { height: auto; --mx: 0 !important; --my: 0 !important; }
+}

@@ -1,0 +1,15 @@
+.profile {
+  padding: 18vh var(--gutter) 14vh;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 1rem 4rem;
+}
+.profile .section-title { grid-row: span 3; align-self: start; margin-top: 0.6rem; }
+.profile__lead {
+  font-size: clamp(1.5rem, 2.8vw, 2.5rem); line-height: 1.22; font-weight: 600;
+  font-variation-settings: 'wdth' 88; max-width: 30ch; letter-spacing: -0.01em;
+}
+.profile__body { max-width: 60ch; color: var(--muted); font-size: 1.125rem; margin-top: 1rem; }
+
+@media (max-width: 899px) {
+  .profile { grid-template-columns: minmax(0, 1fr); }
+  .profile .section-title { grid-row: auto; }
+}

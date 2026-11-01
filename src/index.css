@@ -1,0 +1,87 @@
+/* Palet: kemeja hitam + dasi putih di foto, satu aksen kuning keyframe. */
+:root {
+  --paper: #e8eaed;
+  --ink: #17191d;
+  --muted: #4f545c;
+  --line: #b7bcc4;
+  --key: #ffcc00;
+  --on-key: #17191d;
+  --bar: 56px;
+  --gutter: clamp(16px, 4vw, 56px);
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  --paper: #121418;
+  --ink: #e8eaed;
+  --muted: #a3a9b3;
+  --line: #3a3f48;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #121418;
+    --ink: #e8eaed;
+    --muted: #a3a9b3;
+    --line: #3a3f48;
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-variation-settings: 'wdth' 100;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  overflow-x: clip;
+}
+h1, h2, h3, p, ul, dl, dd { margin: 0; }
+a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 3px; }
+a, button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+img { max-width: 100%; }
+section, footer { scroll-margin-top: 0; }
+
+.skip {
+  position: absolute; left: var(--gutter); top: -100px; z-index: 50;
+  background: var(--key); color: var(--on-key); padding: 12px 16px; font-weight: 700;
+}
+.skip:focus { top: 16px; }
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  font-variation-settings: 'wdth' 100;
+  margin-bottom: 2rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+/* motif keyframe: wajik kecil sebelum tiap judul section */
+.section-title::before {
+  content: ''; width: 10px; height: 10px; flex: none;
+  background: var(--key); border: 2px solid var(--ink); transform: rotate(45deg);
+}
+
+/* Highlighter: sapuan kuning muncul saat masuk viewport */
+.mark {
+  color: var(--ink);
+  padding-bottom: 0.12em;
+  background: linear-gradient(var(--key), var(--key)) no-repeat 0 100% / 0% 0.14em;
+  transition: background-size 600ms cubic-bezier(.6,0,.2,1) var(--d, 0ms);
+}
+.mark.is-in { background-size: 100% 0.14em; }
+
+/* Gaya per section ada di components/*.css */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-scene] { --p: 0 !important; }
+  [data-view] { --v: 1 !important; }
+  .mark { transition: none; background-size: 100% 0.14em; }
+}

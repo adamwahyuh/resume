@@ -1,0 +1,26 @@
+/* PENGALAMAN: kepala sticky di kiri */
+.jobs { padding: 0 var(--gutter) 16vh; }
+.job {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 2rem 4rem;
+  padding: 3rem 0; border-top: 2px solid var(--ink);
+}
+.job__head { position: sticky; top: 8vh; align-self: start; }
+.job__year {
+  font-size: clamp(4.5rem, 11vw, 10rem); font-weight: 900; line-height: 0.85;
+  /* --v: progress job melintasi viewport; angka meregang saat job masuk */
+  font-variation-settings: 'wdth' calc(62 + clamp(0, (var(--v, 1) - 0.1) * 3.5, 1) * 50);
+  letter-spacing: -0.02em; margin-bottom: 1rem;
+}
+.job h3 { font-size: 1.6rem; line-height: 1.15; font-weight: 800; font-variation-settings: 'wdth' 85; }
+.job__company { font-weight: 600; margin-top: 0.4rem; }
+.job__meta { color: var(--muted); font-size: 0.95rem; }
+.job__points { padding: 0; list-style: none; display: grid; gap: 1.1rem; max-width: 62ch; }
+.job__points li { padding-left: 1.5rem; position: relative; }
+.job__points li::before {
+  content: ''; position: absolute; left: 0; top: 0.62em; width: 0.6rem; height: 2px; background: var(--ink);
+}
+
+@media (max-width: 899px) {
+  .job { grid-template-columns: minmax(0, 1fr); }
+  .job__head { position: static; }
+}

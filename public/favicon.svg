@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- bentuk dari ikon Clumsee (squircle + sudut seleksi), warna dari palet resume -->
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="#17191D"/>
+  <g fill="none" stroke="#FFCC00" stroke-width="56" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M260 400 V260 H400"/>
+    <path d="M624 260 H764 V400"/>
+    <path d="M764 624 V764 H624"/>
+    <path d="M400 764 H260 V624"/>
+  </g>
+  <text x="512" y="512" dy="0.35em" text-anchor="middle" textLength="430" lengthAdjust="spacingAndGlyphs"
+    font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="250" fill="#E8EAED">AWH</text>
+</svg>

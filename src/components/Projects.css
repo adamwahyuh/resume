@@ -1,0 +1,52 @@
+/* PROYEK: track horizontal digeser oleh scroll vertikal (desktop) */
+.projects { position: relative; }
+.projects__stage {
+  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
+  display: flex; align-items: center; padding-bottom: var(--bar);
+}
+.projects__track {
+  display: flex; align-items: stretch; width: max-content;
+  padding: 0 var(--gutter);
+  transform: translateX(calc(var(--p, 0) * var(--shift, 0px)));
+  will-change: transform;
+}
+.projects__intro { width: 22rem; padding-right: 3rem; align-self: center; }
+.projects__intro p { font-size: 1.5rem; line-height: 1.25; font-variation-settings: 'wdth' 88; font-weight: 600; }
+.project {
+  width: 21rem; padding: 0 2rem; border-left: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 0.6rem;
+  transition: border-color 200ms;
+}
+.project--big { width: 30rem; }
+.project h3 {
+  font-size: 2rem; line-height: 0.95; font-weight: 900; font-variation-settings: 'wdth' 70;
+  text-transform: uppercase; overflow-wrap: anywhere;
+  transition: font-variation-settings 450ms cubic-bezier(.2,.7,.2,1);
+}
+.project.project--big h3 { font-size: clamp(2.5rem, 4.5vw, 4rem); }
+.project__date { display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem; font-weight: 600; }
+.project__date::before {
+  content: ''; width: 8px; height: 8px; background: var(--key); border: 2px solid var(--ink); transform: rotate(45deg);
+  transition: transform 450ms cubic-bezier(.2,.7,.2,1);
+}
+.project:hover, .project:focus-within { border-left-color: var(--ink); }
+.project:hover h3, .project:focus-within h3 { font-variation-settings: 'wdth' 88; }
+.project:hover .project__date::before, .project:focus-within .project__date::before { transform: rotate(225deg); }
+.project__tag { font-weight: 600; }
+.project__text { color: var(--muted); }
+.project__stack {
+  margin-top: auto; padding-top: 0.75rem; font-size: 0.9rem; font-weight: 600; border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 1rem;
+}
+.project__link { display: inline-flex; align-items: center; min-height: 44px; margin: -12px 0; }
+
+/* Tablet & ponsel: daftar vertikal biasa */
+@media (max-width: 899px) {
+  .projects__stage { position: static; height: auto; display: block; padding: 10vh 0; }
+  .projects__track { flex-direction: column; width: auto; transform: none; gap: 2.5rem; }
+  .projects__intro, .project, .project--big { width: auto; padding: 0; }
+  .project { border-left: 0; border-top: 1px solid var(--line); padding-top: 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project h3, .project__date::before { transition: none; }
+}
