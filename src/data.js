@@ -175,6 +175,7 @@ export const projects = [
     tag: { id: 'Belajar lewat lagu', en: 'Learning through songs' },
     date: { id: 'Okt 2026', en: 'Oct 2026' },
     stack: 'ASP.NET Core, EF Core, SQLite, React',
+    link: { href: 'https://melodizh.utpas.id', kind: 'site' },
     big: true,
     text: {
       id: 'Platform belajar dengan pemutar YouTube, lirik tersinkron, latihan melengkapi lirik, level, dan pencapaian. REST API untuk autentikasi, kelas dan siswa, peringkat, pertemanan, dan pengumuman.',
@@ -239,7 +240,7 @@ export const projects = [
 
 export const skills = [
   [{ id: 'Bahasa', en: 'Languages' }, ['PHP', 'JavaScript/TypeScript', 'Golang', 'C++', 'C#', 'Python']],
-  ['Framework', ['Laravel', 'React.js', 'Next.js', 'Alpine.js', 'Tailwind CSS', 'Tauri', 'Electron', 'Flutter']],
+  ['Framework', ['Laravel', 'React.js', 'Next.js', 'Alpine.js', 'Tailwind CSS', 'Tauri', 'Electron', 'Flutter', '.NET']],
   ['Backend & DevOps', ['REST API', 'SSO', 'Docker', 'Ubuntu Server', 'Vercel']],
   [{ id: 'AI agent', en: 'AI agents' }, ['Claude Code',]],
   [{ id: 'Sistem operasi', en: 'Operating systems' }, ['Linux', 'macOS', 'Windows']],
