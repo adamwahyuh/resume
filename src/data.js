@@ -135,6 +135,18 @@ export const jobs = [
 // big: proyek dengan cakupan paling luas, tampil lebih lebar di track horizontal
 export const projects = [
   {
+    name: 'Clumyap',
+    tag: { id: 'Text-to-speech offline', en: 'Offline text-to-speech' },
+    date: { id: 'Nov 2026', en: 'Nov 2026' },
+    stack: 'Go, sherpa-onnx, Kokoro, Bubble Tea',
+    link: { href: 'https://github.com/adamwahyuh/clumyap', kind: 'repo' },
+    big: true,
+    text: {
+      id: 'Aplikasi TTS yang berjalan sepenuhnya di komputer, tanpa akun dan tanpa internet setelah model diunduh sekali. Suara Kokoro lewat sherpa-onnx, keluaran MP3/WAV, tag mood dan jeda, kamus pengucapan, serta CLI dan terminal UI interaktif. Installer sekali perintah untuk macOS, Linux, dan Windows, dengan auto-update lewat GitHub Actions.',
+      en: 'A text-to-speech app that runs entirely on your own machine: no account, no internet after the one-time model download. Kokoro voices through sherpa-onnx, MP3/WAV output, mood and pause tags, a pronunciation lexicon, plus a CLI and an interactive terminal UI. One-command installers for macOS, Linux, and Windows, with auto-updates through GitHub Actions.',
+    },
+  },
+  {
     name: 'Clumsee',
     tag: 'AI Screen Assistant',
     date: { id: 'Okt 2026', en: 'Oct 2026' },
