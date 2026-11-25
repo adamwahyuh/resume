@@ -135,6 +135,18 @@ export const jobs = [
 // big: proyek dengan cakupan paling luas, tampil lebih lebar di track horizontal
 export const projects = [
   {
+    name: 'Clumyoup',
+    tag: { id: 'Upload YouTube massal', en: 'Bulk YouTube uploader' },
+    date: { id: 'Nov 2026', en: 'Nov 2026' },
+    stack: 'Tauri, Rust, React, TypeScript, YouTube Data API',
+    link: { href: 'https://github.com/adamwahyuh/clumyoup', kind: 'repo' },
+    big: true,
+    text: {
+      id: 'Aplikasi desktop untuk mengunggah dan menjadwalkan video YouTube secara massal dari satu folder. Metadata episode dibaca dari teks, JSON, atau CSV, video diurutkan dengan drag, lalu dijadwalkan beberapa video per hari. Login OAuth lewat browser, upload resumable yang lanjut setelah koneksi putus, penanganan kuota harian, visibilitas dan status made-for-kids per folder, serta peringatan Shorts. Progres disimpan per folder supaya video tidak terunggah dua kali.',
+      en: 'A desktop app for bulk-uploading and scheduling YouTube videos from a single folder. Episode metadata is read from text, JSON, or CSV, videos are reordered by drag and drop, then scheduled several per day. Browser-based OAuth login, resumable uploads that continue after a dropped connection, daily quota handling, per-folder visibility and made-for-kids settings, plus Shorts warnings. Progress is saved per folder so no video is uploaded twice.',
+    },
+  },
+  {
     name: 'Clumyap',
     tag: { id: 'Text-to-speech offline', en: 'Offline text-to-speech' },
     date: { id: 'Nov 2026', en: 'Nov 2026' },
@@ -239,7 +251,7 @@ export const projects = [
 ]
 
 export const skills = [
-  [{ id: 'Bahasa', en: 'Languages' }, ['PHP', 'JavaScript/TypeScript', 'Golang', 'C++', 'C#', 'Python']],
+  [{ id: 'Bahasa', en: 'Languages' }, ['PHP', 'JavaScript/TypeScript', 'Golang', 'Rust', 'C++', 'C#', 'Python']],
   ['Framework', ['Laravel', 'React.js', 'Next.js', 'Alpine.js', 'Tailwind CSS', 'Tauri', 'Electron', 'Flutter', '.NET']],
   ['Backend & DevOps', ['REST API', 'SSO', 'Docker', 'Ubuntu Server', 'Vercel']],
   [{ id: 'AI agent', en: 'AI agents' }, ['Claude Code',]],
